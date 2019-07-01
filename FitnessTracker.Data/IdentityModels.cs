@@ -32,8 +32,8 @@ namespace FitnessTracker.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Note> Notes { get; set; }
-
+        public DbSet<Note> Notes { get; set; }// add a Notes property
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
