@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExerciseListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainerListItem.cs" />
+    <Compile Include="WorkoutListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
