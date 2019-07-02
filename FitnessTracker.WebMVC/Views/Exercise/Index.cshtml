@@ -1,4 +1,5 @@
-﻿@model IEnumerable<FitnessTracker.Data.Exercise>
+﻿@model IEnumerable<FitnessTracker.Models.ExerciseListItem>
+@*@modelIEnumerable<FitnessTracker.Data.Exercise> changed to above version*@
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +13,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.ExerciseId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.NameOfExercise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfExercise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DifficultyLevel)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Duration)
@@ -20,20 +30,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfExercise)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duration)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ExerciseId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ExerciseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ExerciseId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ExerciseId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NameOfExercise)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypeOfExercise)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DifficultyLevel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Duration)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ExerciseId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ExerciseId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ExerciseId })
+    </td>
+</tr>
+    }
 
 </table>

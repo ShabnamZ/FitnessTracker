@@ -15,6 +15,7 @@ namespace FitnessTracker.Data
         [Display(Name ="Name")]
         public string TrainerName { get; set; }
         [Required]
+        [Display(Name ="Workout ID")]
         public int WorkoutId { get; set; }
         [Required]
         public int OwnerId { get; set; }

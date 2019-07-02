@@ -16,5 +16,11 @@ namespace FitnessTracker.WebMVC.Controllers
             var model = new WorkoutListItem[0];
             return View(model);
         }
+
+        //GET Method
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

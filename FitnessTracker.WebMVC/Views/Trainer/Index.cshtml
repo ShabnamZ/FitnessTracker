@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FitnessTracker.Data.Trainer>
+﻿@model IEnumerable<FitnessTracker.Models.TrainerListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TrainerName)
         </th>
         <th>
@@ -23,23 +26,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrainerName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkoutId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OwnerId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TrainerId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TrainerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TrainerId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkoutId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TrainerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TrainerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TrainerId })
+            </td>
+        </tr>
+    }
 
 </table>

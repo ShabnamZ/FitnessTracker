@@ -24,8 +24,10 @@ namespace FitnessTracker.Data
         [Required]
         public Guid UserId { get; set; }
         [Required]
+        [Display(Name ="Name of workout")]
         public string NameOfWorkout { get; set; }
         [Required]
+        [Display(Name ="Exercise ID")]
         public int ExerciseId { get; set; }
         [Required]
         public DayOfWeek  Day { get; set; }
