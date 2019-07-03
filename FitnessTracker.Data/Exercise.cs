@@ -36,6 +36,8 @@ namespace FitnessTracker.Data
         public ExerciseType TypeOfExercise { get; set;}
         [Required]
         public Difficulty DifficultyLevel { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
 
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,20 +8,6 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Models
 {
-    public enum ExerciseType
-    {
-        Aerobic = 1,
-        Strenght,
-        Balance,
-        Flexibility
-    }
-
-    public enum Difficulty
-    {
-        Easy = 1,
-        Medium,
-        Hard
-    }
     public class ExerciseListItem
     {
         [Key]
@@ -34,5 +21,6 @@ namespace FitnessTracker.Models
         public ExerciseType TypeOfExercise { get; set; }
         [Required]
         public Difficulty DifficultyLevel { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

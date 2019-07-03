@@ -18,7 +18,7 @@ namespace FitnessTracker.Data
         [Display(Name ="Workout ID")]
         public int WorkoutId { get; set; }
         [Required]
-        public int OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
 
     }
 }

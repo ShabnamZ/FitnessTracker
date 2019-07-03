@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace FitnessTracker.Models
         public string NameOfWorkout { get; set; }
         [Required]
         public int ExerciseId { get; set; }
-        public DayOfWeek Day { get; set; }
+        public DaysOfWeek Day { get; set; }
     }
 }

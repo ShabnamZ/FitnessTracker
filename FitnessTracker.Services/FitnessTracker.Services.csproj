@@ -54,11 +54,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExerciseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainerService.cs" />
+    <Compile Include="WorkoutService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FitnessTracker.Data\FitnessTracker.Data.csproj">
+      <Project>{bc7a3bdf-a7bb-493e-b1f3-12d4e63c671e}</Project>
+      <Name>FitnessTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FitnessTracker.Models\FitnessTracker.Models.csproj">
+      <Project>{a647e656-bcfa-40d1-8b86-5126f4742e87}</Project>
+      <Name>FitnessTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

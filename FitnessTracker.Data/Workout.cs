@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Data
 {
-    public enum DayOfWeek
+    public enum DaysOfWeek
     {
      Sunday=1,
      Monday,
@@ -22,7 +22,7 @@ namespace FitnessTracker.Data
         [Key]
         public int WorkoutId { get; set; }
         [Required]
-        public Guid UserId { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
         [Display(Name ="Name of workout")]
         public string NameOfWorkout { get; set; }
@@ -30,6 +30,6 @@ namespace FitnessTracker.Data
         [Display(Name ="Exercise ID")]
         public int ExerciseId { get; set; }
         [Required]
-        public DayOfWeek  Day { get; set; }
+        public DaysOfWeek  Day { get; set; }
     }
 }

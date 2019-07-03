@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,16 +8,6 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Models
 {
-    public enum DayOfWeek
-    {
-        Sunday = 1,
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday
-    }
     public class WorkoutListItem
     {
         [Key]
@@ -28,6 +19,6 @@ namespace FitnessTracker.Models
         [Required]
         public int ExerciseId { get; set; }
         [Required]
-        public DayOfWeek Day { get; set; }
+        public DaysOfWeek Day { get; set; }
     }
 }
