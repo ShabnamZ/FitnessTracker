@@ -3,7 +3,7 @@ namespace FitnessTracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initialafterdrop : DbMigration
     {
         public override void Up()
         {
@@ -16,6 +16,7 @@ namespace FitnessTracker.Data.Migrations
                         Duration = c.Single(nullable: false),
                         TypeOfExercise = c.Int(nullable: false),
                         DifficultyLevel = c.Int(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.ExerciseId);
             
@@ -50,7 +51,7 @@ namespace FitnessTracker.Data.Migrations
                         TrainerId = c.Int(nullable: false, identity: true),
                         TrainerName = c.String(nullable: false),
                         WorkoutId = c.Int(nullable: false),
-                        OwnerId = c.Int(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.TrainerId);
             
@@ -105,7 +106,7 @@ namespace FitnessTracker.Data.Migrations
                 c => new
                     {
                         WorkoutId = c.Int(nullable: false, identity: true),
-                        UserId = c.Guid(nullable: false),
+                        OwnerId = c.Guid(nullable: false),
                         NameOfWorkout = c.String(nullable: false),
                         ExerciseId = c.Int(nullable: false),
                         Day = c.Int(nullable: false),

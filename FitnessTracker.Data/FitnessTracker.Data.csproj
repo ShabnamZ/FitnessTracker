@@ -56,13 +56,9 @@
   <ItemGroup>
     <Compile Include="Exercise.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201907021505496_InitialCreate.cs" />
-    <Compile Include="Migrations\201907021505496_InitialCreate.Designer.cs">
-      <DependentUpon>201907021505496_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907022049369_Edited-column-names.cs" />
-    <Compile Include="Migrations\201907022049369_Edited-column-names.Designer.cs">
-      <DependentUpon>201907022049369_Edited-column-names.cs</DependentUpon>
+    <Compile Include="Migrations\201907031849460_initialafterdrop.cs" />
+    <Compile Include="Migrations\201907031849460_initialafterdrop.Designer.cs">
+      <DependentUpon>201907031849460_initialafterdrop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907021505496_InitialCreate.resx">
-      <DependentUpon>201907021505496_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907022049369_Edited-column-names.resx">
-      <DependentUpon>201907022049369_Edited-column-names.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907031849460_initialafterdrop.resx">
+      <DependentUpon>201907031849460_initialafterdrop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -33,5 +33,26 @@ namespace FitnessTracker.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<TrainerListItem> GetTrainer()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                     ctx
+                     .Trainer
+                     .Where(entity => entity.OwnerId == _userId)
+                     .Select(
+                         entity =>
+                         new TrainerListItem
+                         {
+                             TrainerId = entity.TrainerId,
+                             TrainerName = entity.TrainerName,
+                             WorkoutId = entity.WorkoutId,
+                         }
+                     );
+                return query.ToArray();
+            }
+        }
     }
 }

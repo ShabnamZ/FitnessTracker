@@ -1,4 +1,6 @@
 ﻿using FitnessTracker.Models;
+using FitnessTracker.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +9,16 @@ using System.Web.Mvc;
 
 namespace FitnessTracker.WebMVC.Controllers
 {
-    [Authorize]
+   /* [Authorize]
     public class TrainerController : Controller
     {
         // GET: Trainer
         public ActionResult Index()
         {
-            var model = new TrainerListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrainerService(userId);
+            var model = service.GetTrainer();
+
             return View(model);
         }
 
@@ -26,11 +31,16 @@ namespace FitnessTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrainerCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrainerService(userId);
+
+            service.CreateTrainer(model);
+
+            return RedirectToAction("Index");
         }
-    }
+    }*/
 }

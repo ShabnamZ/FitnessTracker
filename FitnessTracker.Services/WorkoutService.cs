@@ -35,32 +35,26 @@ namespace FitnessTracker.Services
             }
         }
 
-        public IEnumerable<WorkoutListItem> GetExercises()
+        public IEnumerable<WorkoutListItem> GetWorkout()
         {
-          using (var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
                 var query =
-                    ctx
-                    .Workouts
-                    .Where(e => e.OwnerId == _userId)
-                    .Select(
-                        e =>
-                        new WorkoutListItem
-                        {
-                            WorkoutId = e.WorkoutId,
-                            UserId = e.UserId,
-                            NameOfWorkout = e.NameOfWorkout,
-                            ExerciseId = e.ExerciseId,
-                            Day = e.Day
-                        }
-
-                        ) ;
+                     ctx
+                     .Workouts
+                     .Where(entity => entity.OwnerId == _userId)
+                     .Select(
+                         entity =>
+                         new WorkoutListItem
+                         {
+                             WorkoutId = entity.WorkoutId,
+                             NameOfWorkout = entity.NameOfWorkout,
+                             ExerciseId = entity.ExerciseId,
+                             Day = entity.Day
+                         }
+                     );
+                return query.ToArray();
             }
         }
-        /*   public IEnumerable<EntryListItem> GetEntries()
-       {
-           var query = _db.Entries.Where(existingEntry => existingEntry.OwnerId == _userId).Select(existingEntry => new EntryListItem { EntryDate = existingEntry.EntryDate, MoodRating = existingEntry.MoodRating });
-           return query.ToArray();
-       }*/
     }
 }

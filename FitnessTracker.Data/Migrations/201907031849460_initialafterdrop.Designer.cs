@@ -7,13 +7,13 @@ namespace FitnessTracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Editedcolumnnames : IMigrationMetadata
+    public sealed partial class initialafterdrop : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Editedcolumnnames));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialafterdrop));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907022049369_Edited-column-names"; }
+            get { return "201907031849460_initialafterdrop"; }
         }
         
         string IMigrationMetadata.Source
