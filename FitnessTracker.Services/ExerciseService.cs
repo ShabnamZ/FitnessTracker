@@ -98,5 +98,20 @@ namespace FitnessTracker.Services
 
             }
         }
+
+        public bool DeleteExercise(int exerciseId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Exercises
+                        .Single(e => e.ExerciseId == exerciseId && e.OwnerId == _userId);
+
+                ctx.Exercises.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

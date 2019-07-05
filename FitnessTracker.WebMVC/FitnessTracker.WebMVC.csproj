@@ -244,7 +244,9 @@
     <Content Include="Views\Workout\Create.cshtml" />
     <Content Include="Views\Trainer\View.cshtml" />
     <Content Include="Views\Trainer\Create.cshtml" />
-    <Content Include="Views\Trainer\Details.cshtml" />
+    <Content Include="Views\Exercise\Edit.cshtml" />
+    <Content Include="Views\Exercise\Details.cshtml" />
+    <Content Include="Views\Exercise\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

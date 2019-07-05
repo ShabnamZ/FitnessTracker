@@ -36,10 +36,10 @@ namespace FitnessTracker.WebMVC.Controllers
             var service = CreateExerciseService();
 
             if (service.CreateExercise(model))
-              {
-                TempData["SaveResult"]= "Your note was created.";
-                 return RedirectToAction("Index");
-             };
+            {
+                TempData["SaveResult"] = "Your note was created.";
+                return RedirectToAction("Index");
+            };
 
             ModelState.AddModelError("", "Note could not be created");
 
@@ -67,11 +67,56 @@ namespace FitnessTracker.WebMVC.Controllers
                 };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ExerciseEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if (model.ExerciseId != id)
+            {
+                ModelState.AddModelError("", "IdMismatch");
+                return View(model);
+            }
+
+            var service = CreateExerciseService();
+
+            if (service.UpdateExercise(model))
+            {
+                TempData["SaveResult"] = "Your exercise was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your exercise could not be updated.");
+            return View(model);
+        }
+
+        //Delete GET Method and View 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateExerciseService();
+            var model = svc.GetExerciseById(id);
+            return View(model);
+        }
         private ExerciseService CreateExerciseService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ExerciseService(userId);
             return service;
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateExerciseService();
+
+            service.DeleteExercise(id);
+
+            TempData["SaveResult"] = "Your exercise was deleted";
+
+            return RedirectToAction("Index");
         }
     }
 }
