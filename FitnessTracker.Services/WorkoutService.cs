@@ -56,5 +56,58 @@ namespace FitnessTracker.Services
                 return query.ToArray();
             }
         }
+
+        public WorkoutDetail GetWorkoutById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Workouts
+                    .Single(e => e.WorkoutId == id && e.OwnerId == _userId);
+                return
+                    new Models.WorkoutDetail
+                    {
+                        WorkoutId = entity.WorkoutId,
+                        NameOfWorkout = entity.NameOfWorkout,
+                        ExerciseId = entity.ExerciseId,
+                        Day = entity.Day
+
+                    };
+            }
+        }
+
+        public bool UpdateWorkout(WorkoutEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Workouts
+                        .Single(e => e.WorkoutId == model.WorkoutId && e.OwnerId == _userId);
+
+                entity.WorkoutId = model.WorkoutId;
+                entity.NameOfWorkout = model.NameOfWorkout;
+                entity.ExerciseId = model.ExerciseId;
+                entity.Day = model.Day;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteWorkout(int workoutId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Workouts
+                        .Single(e => e.WorkoutId == workoutId && e.OwnerId == _userId);
+
+                ctx.Workouts.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

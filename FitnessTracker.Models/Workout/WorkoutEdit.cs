@@ -8,20 +8,17 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Models
 {
-    public class WorkoutListItem
+     public class WorkoutEdit
     {
-        [Key]
-        [Display(Name ="Workout ID")]
+        
         public int WorkoutId { get; set; }
-       // [Required]
-       // public Guid UserId { get; set; }
-        [Required]
-        [Display(Name = "Name of Workout ")]
+        
+        [Display(Name = "Name of workout")]
         public string NameOfWorkout { get; set; }
-        [Required]
-        [Display(Name = "Exercise ID ")]
+        
+        [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
-        [Required]
+        
         public DaysOfWeek Day { get; set; }
     }
 }
