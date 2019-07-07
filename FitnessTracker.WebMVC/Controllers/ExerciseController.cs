@@ -10,9 +10,9 @@ using System.Web.Mvc;
 namespace FitnessTracker.WebMVC.Controllers
 {
     [Authorize]
-    public class TrainerController : Controller
+    public class ExerciseController : Controller
     {
-        // GET: Trainer
+        // GET: Exercise
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

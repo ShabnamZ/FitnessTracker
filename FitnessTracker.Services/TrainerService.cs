@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FitnessTracker.Services
 {
-     public class TrainerService
+    public class TrainerService
     {
         private readonly Guid _userId;
 
@@ -24,7 +24,7 @@ namespace FitnessTracker.Services
                 {
                     OwnerId = _userId,
                     TrainerName = model.TrainerName,
-                    WorkoutId = model.WorkoutId,   
+                    WorkoutId = model.WorkoutId,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -52,6 +52,58 @@ namespace FitnessTracker.Services
                          }
                      );
                 return query.ToArray();
+            }
+        }
+
+        public TrainerDetail GetTrainerById(int id)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+
+                var entity =
+                    ctx
+                    .Trainer
+                    .Single(e => e.TrainerId == id && e.OwnerId == _userId);
+                return
+                    new TrainerDetail
+                    {
+                        TrainerId = entity.TrainerId,
+                        TrainerName = entity.TrainerName,
+                        WorkoutId = entity.WorkoutId
+                    };
+            }
+        }
+
+        public bool UpdateTrainer(TrainerEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Trainer
+                    .Single(e => e.TrainerId == model.TrainerId && e.OwnerId == _userId);
+
+                entity.TrainerId = model.TrainerId;
+                entity.TrainerName = model.TrainerName;
+                entity.WorkoutId = model.WorkoutId;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+        public bool DeleteTrainer(int trainerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Trainer
+                        .Single(e => e.TrainerId == trainerId && e.OwnerId == _userId);
+
+                ctx.Trainer.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
