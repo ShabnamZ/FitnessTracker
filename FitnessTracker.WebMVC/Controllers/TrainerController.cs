@@ -1,4 +1,5 @@
-﻿using FitnessTracker.Models;
+﻿using FitnessTracker.Data;
+using FitnessTracker.Models;
 using FitnessTracker.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,10 +13,13 @@ namespace FitnessTracker.WebMVC.Controllers
    [Authorize]
     public class TrainerController : Controller
     {
+        private TrainerService _trainerService;
+        private WorkoutService _workoutService;
         // GET: Trainer
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+
+           var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TrainerService(userId);
             var model = service.GetTrainer();
 
@@ -25,8 +29,12 @@ namespace FitnessTracker.WebMVC.Controllers
         //GET Method
         public ActionResult Create()
         {
+            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
+            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
+            ViewBag.WorkoutId = new SelectList(_workoutService.GetWorkout().ToList(), "WorkoutId", "NameOfWorkout");
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TrainerCreate model)
@@ -57,6 +65,9 @@ namespace FitnessTracker.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
+            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
+            ViewBag.WorkoutId = new SelectList(_workoutService.GetWorkout().ToList(), "WorkoutId", "WorkoutName");
             var service = CreateTrainerService();
             var detail = service.GetTrainerById(id);
             var model =
@@ -68,6 +79,7 @@ namespace FitnessTracker.WebMVC.Controllers
                 };
             return View(model);
         }
+
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {

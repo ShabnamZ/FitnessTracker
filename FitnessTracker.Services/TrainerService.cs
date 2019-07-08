@@ -49,9 +49,11 @@ namespace FitnessTracker.Services
                              TrainerId = entity.TrainerId,
                              TrainerName = entity.TrainerName,
                              WorkoutId = entity.WorkoutId,
+                             WorkoutName = entity.Workout.NameOfWorkout
+
                          }
                      );
-                return query.ToArray();
+                return query.ToList();
             }
         }
 

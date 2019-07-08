@@ -53,7 +53,7 @@ namespace FitnessTracker.Services
                              Day = entity.Day
                          }
                      );
-                return query.ToArray();
+                return query.ToList();
             }
         }
 
@@ -71,6 +71,7 @@ namespace FitnessTracker.Services
                         WorkoutId = entity.WorkoutId,
                         NameOfWorkout = entity.NameOfWorkout,
                         ExerciseId = entity.ExerciseId,
+                        ExerciseName = entity.Exercise.NameOfExercise,
                         Day = entity.Day
 
                     };
