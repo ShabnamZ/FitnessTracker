@@ -21,5 +21,7 @@ namespace FitnessTracker.Models
         public string ExerciseName { get; set; }
         [Required]
         public DaysOfWeek Day { get; set; }
+        public int TrainerId { get; set; }
+        public string TrainerName { get; set; }
     }
 }

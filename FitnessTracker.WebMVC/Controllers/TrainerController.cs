@@ -14,7 +14,6 @@ namespace FitnessTracker.WebMVC.Controllers
     public class TrainerController : Controller
     {
         private TrainerService _trainerService;
-        private WorkoutService _workoutService;
         // GET: Trainer
         public ActionResult Index()
         {
@@ -29,9 +28,6 @@ namespace FitnessTracker.WebMVC.Controllers
         //GET Method
         public ActionResult Create()
         {
-            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
-            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
-            ViewBag.WorkoutId = new SelectList(_workoutService.GetWorkout().ToList(), "WorkoutId", "NameOfWorkout");
             return View();
         }
 
@@ -45,7 +41,7 @@ namespace FitnessTracker.WebMVC.Controllers
 
             if (service.CreateTrainer(model))
             {
-                TempData["SaveResult"] = "Your trainer was created.";
+                TempData["SaveResult"] = "Trainer was created.";
                 return RedirectToAction("Index");
             };
 
@@ -65,9 +61,6 @@ namespace FitnessTracker.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
-            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
-            ViewBag.WorkoutId = new SelectList(_workoutService.GetWorkout().ToList(), "WorkoutId", "WorkoutName");
             var service = CreateTrainerService();
             var detail = service.GetTrainerById(id);
             var model =
@@ -75,7 +68,7 @@ namespace FitnessTracker.WebMVC.Controllers
                 {
                     TrainerId = detail.TrainerId,
                     TrainerName = detail.TrainerName,
-                    WorkoutId = detail.WorkoutId
+                    Description = detail.Description
                 };
             return View(model);
         }

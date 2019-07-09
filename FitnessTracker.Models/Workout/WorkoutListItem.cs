@@ -19,6 +19,11 @@ namespace FitnessTracker.Models
         [Required]
         [Display(Name = "Name of Workout ")]
         public string NameOfWorkout { get; set; }
+
+        [UIHint("Starred")]
+        [Display(Name ="Favorite")]
+        public bool IsStarred { get; set; }
+
         [Required]
         [Display(Name = "Exercise ID ")]
         public string WorkoutName { get; set; }
@@ -27,8 +32,12 @@ namespace FitnessTracker.Models
         [Required]
         [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
-        public virtual Exercise Exercise { get; set; }
+        public int TrainerId { get; set; }
+        public string TrainerName { get; set; }
+
         [Required]
         public DaysOfWeek Day { get; set; }
+
+        public virtual Exercise Exercise { get; set; }
     }
 }

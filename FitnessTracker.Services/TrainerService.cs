@@ -24,7 +24,6 @@ namespace FitnessTracker.Services
                 {
                     OwnerId = _userId,
                     TrainerName = model.TrainerName,
-                    WorkoutId = model.WorkoutId,
                     Description = model.Description,
                 };
 
@@ -49,9 +48,6 @@ namespace FitnessTracker.Services
                          {
                              TrainerId = entity.TrainerId,
                              TrainerName = entity.TrainerName,
-                             WorkoutId = entity.WorkoutId,
-                             Workout = entity.Workout,
-                             WorkoutName = entity.Workout.NameOfWorkout,
                              Description = entity.Description
 
                          }
@@ -74,7 +70,6 @@ namespace FitnessTracker.Services
                     {
                         TrainerId = entity.TrainerId,
                         TrainerName = entity.TrainerName,
-                        WorkoutId = entity.WorkoutId,
                         Description = entity.Description
                     };
             }
@@ -91,7 +86,6 @@ namespace FitnessTracker.Services
 
                 entity.TrainerId = model.TrainerId;
                 entity.TrainerName = model.TrainerName;
-                entity.WorkoutId = model.WorkoutId;
                 entity.Description = model.Description;
 
                 return ctx.SaveChanges() == 1;

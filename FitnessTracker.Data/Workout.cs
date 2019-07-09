@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -24,15 +25,27 @@ namespace FitnessTracker.Data
         public int WorkoutId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
+
         [Required]
         [Display(Name ="Name of workout")]
         public string NameOfWorkout { get; set; }
+
+        [Display(Name ="Favorite")]
+        [DefaultValue(false)]
+        public bool IsStarred { get; set; }
+
         [ForeignKey("Exercise")]
         [Required]
         [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
-        public virtual Exercise Exercise{ get; set; }
+        [ForeignKey("Trainer")]
+        [Required]
+        [Display(Name = "Trainer ID")]
+        public int TrainerId { get; set; }
         [Required]
         public DaysOfWeek  Day { get; set; }
+        public int Duration { get; set; }
+        public virtual Exercise Exercise { get; set; }
+        public virtual Trainer Trainer { get; set; }
     }
 }

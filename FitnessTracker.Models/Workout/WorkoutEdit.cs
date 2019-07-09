@@ -15,10 +15,13 @@ namespace FitnessTracker.Models
         
         [Display(Name = "Name of workout")]
         public string NameOfWorkout { get; set; }
-        
+        [Display(Name ="Favorite")]
+        public bool IsStarred { get; set; }
+
         [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
         
         public DaysOfWeek Day { get; set; }
+        public int TrainerId { get; set; }
     }
 }

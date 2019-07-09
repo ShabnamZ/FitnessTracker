@@ -25,6 +25,7 @@ namespace FitnessTracker.Services
                     OwnerId = _userId,
                     NameOfWorkout = model.NameOfWorkout,
                     ExerciseId = model.ExerciseId,
+                    TrainerId =model.TrainerId,
                     Day = model.Day
                 };
 
@@ -49,8 +50,11 @@ namespace FitnessTracker.Services
                          {
                              WorkoutId = entity.WorkoutId,
                              NameOfWorkout = entity.NameOfWorkout,
+                             IsStarred = entity.IsStarred,
                              ExerciseId = entity.ExerciseId,
                              Exercise=entity.Exercise,
+                             TrainerId = entity.TrainerId,
+                             TrainerName = entity.Trainer.TrainerName,
                              Day = entity.Day
                          }
                      );
@@ -73,6 +77,8 @@ namespace FitnessTracker.Services
                         NameOfWorkout = entity.NameOfWorkout,
                         ExerciseId = entity.ExerciseId,
                         ExerciseName = entity.Exercise.NameOfExercise,
+                        TrainerId = entity.TrainerId,
+                        TrainerName = entity.Trainer.TrainerName,
                         Day = entity.Day
 
                     };
@@ -90,7 +96,9 @@ namespace FitnessTracker.Services
 
                 entity.WorkoutId = model.WorkoutId;
                 entity.NameOfWorkout = model.NameOfWorkout;
+                entity.IsStarred = model.IsStarred;
                 entity.ExerciseId = model.ExerciseId;
+                entity.TrainerId = model.TrainerId;
                 entity.Day = model.Day;
 
                 return ctx.SaveChanges() == 1;

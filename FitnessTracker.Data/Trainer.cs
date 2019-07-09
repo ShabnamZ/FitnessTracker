@@ -15,11 +15,7 @@ namespace FitnessTracker.Data
         [Required]
         [Display(Name = "Name")]
         public string TrainerName { get; set; }
-        [ForeignKey("Workout")]
-        [Required]
-        [Display(Name = "Workout ID")]
-        public int WorkoutId { get; set; }
-        public virtual Workout Workout { get; set; }
+       
         public string Description { get; set; }
         [Required]
         public Guid OwnerId { get; set; }

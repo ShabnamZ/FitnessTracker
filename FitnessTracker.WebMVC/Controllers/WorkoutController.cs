@@ -13,7 +13,7 @@ namespace FitnessTracker.WebMVC.Controllers
     [Authorize]
     public class WorkoutController : Controller
     {
-        private WorkoutService _workoutService;
+        private TrainerService _trainerService;
         private ExerciseService _exerciseService;
         // GET: Trainer
         public ActionResult Index()
@@ -29,9 +29,10 @@ namespace FitnessTracker.WebMVC.Controllers
         //GET Method
         public ActionResult Create()
         {
-            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
+            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
             _exerciseService = new ExerciseService(Guid.Parse(User.Identity.GetUserId()));
             ViewBag.ExerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "NameOfExercise");
+            ViewBag.TrainerId = new SelectList(_trainerService.GetTrainer().ToList(), "TrainerId", "TrainerName");
             return View();
         }
 
@@ -65,9 +66,10 @@ namespace FitnessTracker.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            _workoutService = new WorkoutService(Guid.Parse(User.Identity.GetUserId()));
+            _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
             _exerciseService = new ExerciseService(Guid.Parse(User.Identity.GetUserId()));
-            ViewBag.ExcerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "ExerciseName");
+            ViewBag.ExcerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "NameOfExercise");
+            ViewBag.TrainerId = new SelectList(_trainerService.GetTrainer().ToList(), "TrainerId", "TrainerName");
             var service = CreateWorkoutService();
             var detail = service.GetWorkoutById(id);
             var model =
@@ -75,6 +77,7 @@ namespace FitnessTracker.WebMVC.Controllers
                 {
                     WorkoutId = detail.WorkoutId,
                     NameOfWorkout = detail.NameOfWorkout,
+                    TrainerId = detail.TrainerId,
                     ExerciseId= detail.ExerciseId,
                     Day = detail.Day
                 };

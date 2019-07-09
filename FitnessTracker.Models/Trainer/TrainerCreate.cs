@@ -11,9 +11,6 @@ namespace FitnessTracker.Models
     {
         [Required]
         public string TrainerName { get; set; }
-        [Required]
-        public int WorkoutId { get; set; }
-        public string WorkoutName { get; set; }
         public string Description { get; set; }
     }
 }

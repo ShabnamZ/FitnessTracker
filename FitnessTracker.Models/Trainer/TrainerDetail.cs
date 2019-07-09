@@ -14,9 +14,6 @@ namespace FitnessTracker.Models
         
         [Display(Name = "Name")]
         public string TrainerName { get; set; }
-       
-        [Display(Name = "Workout ID")]
-        public int WorkoutId { get; set; }
         public string Description { get; set; }
     }
 }

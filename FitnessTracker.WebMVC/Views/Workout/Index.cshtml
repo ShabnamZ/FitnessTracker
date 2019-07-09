@@ -21,7 +21,7 @@
 }
 <table class="table">
     <tr>
-       @* <th>
+        @* <th>
             @Html.DisplayNameFor(model => model.WorkoutId)
         </th>
         <th>
@@ -31,7 +31,13 @@
             @Html.DisplayNameFor(model => model.NameOfWorkout)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.IsStarred)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Exercise.NameOfExercise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Day)
@@ -41,28 +47,62 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-           @* <td>
-                @Html.DisplayFor(modelItem => item.WorkoutId)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOfWorkout)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Exercise.NameOfExercise)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Day)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.WorkoutId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.WorkoutId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.WorkoutId })
-            </td>
-        </tr>
+<tr>
+    @* <td>
+            @Html.DisplayFor(modelItem => item.WorkoutId)
+        </td>
+        <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.NameOfWorkout)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.IsStarred, new { Id = item.WorkoutId })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Exercise.NameOfExercise)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrainerName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Day)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.WorkoutId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.WorkoutId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.WorkoutId })
+    </td>
+</tr>
     }
 
 </table>
+
+@section scripts {
+    <script language="javascript" type="text/javascript">
+     $(document).ready(function () {
+         $("i[data-toggle='star']")
+             .css({ "cursor": "pointer" })
+             .click(function (e) {
+                 var target = $(e.target);
+                 var workoutId = target.attr("data-id");
+                 var starSet = target.hasClass("glyphicon-star");
+
+                 $.ajax({
+                     method: starSet ? "DELETE" : "PUT",
+                     url: "/api/workout/" + workoutId + "/star",
+                     data: null
+                 })
+                 .done(function (r) {
+                     target.removeClass();
+                     target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                 })
+                 .fail(function (r) {
+                     alert("Failed to change star status");
+                 });
+             });
+     });
+    </script>
+}
