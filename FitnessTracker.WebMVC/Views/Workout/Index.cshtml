@@ -21,17 +21,17 @@
 }
 <table class="table">
     <tr>
-        <th>
+       @* <th>
             @Html.DisplayNameFor(model => model.WorkoutId)
         </th>
-        @* <th>
+        <th>
                 @Html.DisplayNameFor(model => model.UserId)
             </th>*@
         <th>
             @Html.DisplayNameFor(model => model.NameOfWorkout)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ExerciseId)
+            @Html.DisplayNameFor(model => model.Exercise.NameOfExercise)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Day)
@@ -42,17 +42,17 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.WorkoutId)
             </td>
-            @*<td>
+            <td>
                     @Html.DisplayFor(modelItem => item.UserId)
                 </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.NameOfWorkout)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ExerciseId)
+                @Html.DisplayFor(modelItem => item.Exercise.NameOfExercise)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Day)

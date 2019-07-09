@@ -22,9 +22,10 @@
  }
     <table class="table">
         <tr>
+            @*
             <th>
                 @Html.DisplayNameFor(model => model.ExerciseId)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.NameOfExercise)
             </th>
@@ -42,28 +43,34 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ExerciseId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NameOfExercise)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TypeOfExercise)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DifficultyLevel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Duration)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ExerciseId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ExerciseId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ExerciseId })
-                </td>
-            </tr>
+    <tr>
+        @*
+        <td>
+            @Html.DisplayFor(modelItem => item.ExerciseId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfExercise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeOfExercise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DifficultyLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ExerciseId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ExerciseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ExerciseId })
+        </td>
+    </tr>
         }
 
     </table>
+<style>
+    body {
+        background-color:red;
+    }
+</style>

@@ -25,6 +25,7 @@ namespace FitnessTracker.Services
                     OwnerId = _userId,
                     TrainerName = model.TrainerName,
                     WorkoutId = model.WorkoutId,
+                    Description = model.Description,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,7 +50,9 @@ namespace FitnessTracker.Services
                              TrainerId = entity.TrainerId,
                              TrainerName = entity.TrainerName,
                              WorkoutId = entity.WorkoutId,
-                             WorkoutName = entity.Workout.NameOfWorkout
+                             Workout = entity.Workout,
+                             WorkoutName = entity.Workout.NameOfWorkout,
+                             Description = entity.Description
 
                          }
                      );
@@ -71,7 +74,8 @@ namespace FitnessTracker.Services
                     {
                         TrainerId = entity.TrainerId,
                         TrainerName = entity.TrainerName,
-                        WorkoutId = entity.WorkoutId
+                        WorkoutId = entity.WorkoutId,
+                        Description = entity.Description
                     };
             }
         }
@@ -88,6 +92,7 @@ namespace FitnessTracker.Services
                 entity.TrainerId = model.TrainerId;
                 entity.TrainerName = model.TrainerName;
                 entity.WorkoutId = model.WorkoutId;
+                entity.Description = model.Description;
 
                 return ctx.SaveChanges() == 1;
 

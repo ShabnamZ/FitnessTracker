@@ -50,6 +50,7 @@ namespace FitnessTracker.Services
                              WorkoutId = entity.WorkoutId,
                              NameOfWorkout = entity.NameOfWorkout,
                              ExerciseId = entity.ExerciseId,
+                             Exercise=entity.Exercise,
                              Day = entity.Day
                          }
                      );

@@ -20,6 +20,7 @@ namespace FitnessTracker.Data
         [Display(Name = "Workout ID")]
         public int WorkoutId { get; set; }
         public virtual Workout Workout { get; set; }
+        public string Description { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
 
