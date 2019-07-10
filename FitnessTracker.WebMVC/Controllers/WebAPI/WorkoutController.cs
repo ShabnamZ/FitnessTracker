@@ -23,14 +23,16 @@ namespace FitnessTracker.WebMVC.Controllers.WebAPI
             // Get the workout
             var detail = service.GetWorkoutById(workoutId);
 
-            // Create the NoteEdit model instance with the new star state
+            // Create the WorkoutEdit model instance with the new star state
             var updatedWorkout =
                 new WorkoutEdit
                 {
                     WorkoutId = detail.WorkoutId,
                     NameOfWorkout = detail.NameOfWorkout,
                     IsStarred = newState,
-                    Day = detail.Day
+                    TrainerId = detail.TrainerId,
+                    Day = detail.Day,
+                    DayOfWorkout =detail.DayOfWorkout
                 };
 
             // Return a value indicating whether the update succeeded

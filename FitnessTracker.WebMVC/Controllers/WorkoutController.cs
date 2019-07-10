@@ -79,7 +79,8 @@ namespace FitnessTracker.WebMVC.Controllers
                     NameOfWorkout = detail.NameOfWorkout,
                     TrainerId = detail.TrainerId,
                     ExerciseId= detail.ExerciseId,
-                    Day = detail.Day
+                    Day = detail.Day,
+                    DayOfWorkout = detail.DayOfWorkout
                 };
             return View(model);
         }
@@ -133,6 +134,11 @@ namespace FitnessTracker.WebMVC.Controllers
             TempData["SaveResult"] = "Your workout was deleted";
 
             return RedirectToAction("Index");
+        }
+        //Method for WorkoutByDate
+        public ActionResult WorkoutByDate()
+        {
+            return View(ListOfWorkout);
         }
     }
 }

@@ -37,6 +37,7 @@ namespace FitnessTracker.Models
 
         [Required]
         public DaysOfWeek Day { get; set; }
+        public DateTime DayOfWorkout { get; set; }
 
         public virtual Exercise Exercise { get; set; }
     }

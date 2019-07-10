@@ -42,6 +42,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Day)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfWorkout)
+        </th>
         <th></th>
     </tr>
 
@@ -69,6 +72,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Day)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DayOfWorkout)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.WorkoutId }) |

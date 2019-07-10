@@ -27,7 +27,7 @@ namespace FitnessTracker.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        [Display(Name ="Name of workout")]
+        [Display(Name =" Workout")]
         public string NameOfWorkout { get; set; }
 
         [Display(Name ="Favorite")]
@@ -36,7 +36,7 @@ namespace FitnessTracker.Data
 
         [ForeignKey("Exercise")]
         [Required]
-        [Display(Name = "Exercise ID")]
+        [Display(Name = "Exercise Id")]
         public int ExerciseId { get; set; }
         [ForeignKey("Trainer")]
         [Required]
@@ -44,6 +44,7 @@ namespace FitnessTracker.Data
         public int TrainerId { get; set; }
         [Required]
         public DaysOfWeek  Day { get; set; }
+        public  DateTime  DayOfWorkout{ get; set; }
         public int Duration { get; set; }
         public virtual Exercise Exercise { get; set; }
         public virtual Trainer Trainer { get; set; }

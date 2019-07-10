@@ -68,6 +68,15 @@
   <ItemGroup>
     <Compile Include="Exercise.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\201907092054145_InitialCreate.cs" />
+    <Compile Include="Migrations\201907092054145_InitialCreate.Designer.cs">
+      <DependentUpon>201907092054145_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101517462_new-property-added-to-Workout-table.cs" />
+    <Compile Include="Migrations\201907101517462_new-property-added-to-Workout-table.Designer.cs">
+      <DependentUpon>201907101517462_new-property-added-to-Workout-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trainer.cs" />
     <Compile Include="Workout.cs" />
@@ -75,6 +84,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907092054145_InitialCreate.resx">
+      <DependentUpon>201907092054145_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101517462_new-property-added-to-Workout-table.resx">
+      <DependentUpon>201907101517462_new-property-added-to-Workout-table.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

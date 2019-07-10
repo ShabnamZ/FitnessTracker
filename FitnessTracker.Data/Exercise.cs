@@ -24,10 +24,10 @@ namespace FitnessTracker.Data
     public class Exercise
     {
         [Key]
-        [Display(Name ="ID")]
+        [Display(Name ="Exercise Id")]
         public int ExerciseId { get; set; }
         [Required]
-        [Display(Name ="Name")]
+        [Display(Name ="Exercise")]
         public string NameOfExercise { get; set; }
         [Required]
         public float Duration { get; set; }
