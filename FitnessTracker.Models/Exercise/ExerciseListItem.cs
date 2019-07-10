@@ -13,7 +13,7 @@ namespace FitnessTracker.Models
         [Key]
         public int ExerciseId { get; set; }
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Exercise")]
         public string NameOfExercise { get; set; }
         public string ExerciseName { get; set; }
         [Required]

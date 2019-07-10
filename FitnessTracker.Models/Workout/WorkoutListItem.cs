@@ -17,7 +17,7 @@ namespace FitnessTracker.Models
        // [Required]
        // public Guid UserId { get; set; }
         [Required]
-        [Display(Name = "Name of Workout ")]
+        [Display(Name = "Workout")]
         public string NameOfWorkout { get; set; }
 
         [UIHint("Starred")]
@@ -33,10 +33,12 @@ namespace FitnessTracker.Models
         [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
         public int TrainerId { get; set; }
+        [Display(Name ="Trainer")]
         public string TrainerName { get; set; }
 
         [Required]
         public DaysOfWeek Day { get; set; }
+        [Display(Name ="Workout By Day")]
         public DateTime DayOfWorkout { get; set; }
         public int Duration { get; set; }
 
