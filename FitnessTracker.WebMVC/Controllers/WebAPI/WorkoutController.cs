@@ -32,6 +32,7 @@ namespace FitnessTracker.WebMVC.Controllers.WebAPI
                     IsStarred = newState,
                     TrainerId = detail.TrainerId,
                     Day = detail.Day,
+                    Duration = detail.Duration,
                     DayOfWorkout =detail.DayOfWorkout
                 };
 

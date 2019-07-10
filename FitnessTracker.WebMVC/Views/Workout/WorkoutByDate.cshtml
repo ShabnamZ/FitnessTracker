@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DateTime>
+
+@{
+    ViewBag.Title = "WorkoutByDate";
+}
+
+<h2>WorkoutByDate</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.NameOfWorkout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsStarred)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkoutName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExerciseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DayOfWorkout)
+        </th>*@
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.NameOfWorkout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsStarred)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkoutName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExerciseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfWorkout)
+        </td>*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.WorkoutId }) |*@
+            @Html.ActionLink("Details", "ByDateDetails", new { date = item }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.WorkoutId })*@
+        </td>
+    </tr>
+}
+
+</table>

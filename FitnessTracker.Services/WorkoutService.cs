@@ -27,6 +27,7 @@ namespace FitnessTracker.Services
                     ExerciseId = model.ExerciseId,
                     TrainerId =model.TrainerId,
                     DayOfWorkout = model.DayOfWorkout,
+                    Duration = model.Duration,
                     Day = model.Day
                 };
 
@@ -57,6 +58,7 @@ namespace FitnessTracker.Services
                              TrainerId = entity.TrainerId,
                              TrainerName = entity.Trainer.TrainerName,
                              DayOfWorkout= entity.DayOfWorkout,
+                             Duration = entity.Duration,
                              Day = entity.Day
                          }
                      );
@@ -82,6 +84,7 @@ namespace FitnessTracker.Services
                         TrainerId = entity.TrainerId,
                         TrainerName = entity.Trainer.TrainerName,
                         DayOfWorkout = entity.DayOfWorkout,
+                        Duration = entity.Duration,
                         Day = entity.Day
 
                     };
@@ -103,6 +106,7 @@ namespace FitnessTracker.Services
                 //entity.ExerciseId = model.ExerciseId;
                 //entity.TrainerId = model.TrainerId;
                 entity.DayOfWorkout = model.DayOfWorkout;
+                entity.Duration = model.Duration;
                 entity.Day = model.Day;
 
                 return ctx.SaveChanges() == 1;

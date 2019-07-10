@@ -25,7 +25,7 @@ namespace FitnessTracker.Models
         public bool IsStarred { get; set; }
 
         [Required]
-        [Display(Name = "Exercise ID ")]
+        [Display(Name = "Workout ")]
         public string WorkoutName { get; set; }
 
         [ForeignKey("Exercise")]
@@ -38,6 +38,7 @@ namespace FitnessTracker.Models
         [Required]
         public DaysOfWeek Day { get; set; }
         public DateTime DayOfWorkout { get; set; }
+        public int Duration { get; set; }
 
         public virtual Exercise Exercise { get; set; }
     }

@@ -78,8 +78,9 @@ namespace FitnessTracker.WebMVC.Controllers
                     WorkoutId = detail.WorkoutId,
                     NameOfWorkout = detail.NameOfWorkout,
                     TrainerId = detail.TrainerId,
-                    ExerciseId= detail.ExerciseId,
+                    ExerciseId = detail.ExerciseId,
                     Day = detail.Day,
+                    Duration = detail.Duration,
                     DayOfWorkout = detail.DayOfWorkout
                 };
             return View(model);
@@ -135,10 +136,41 @@ namespace FitnessTracker.WebMVC.Controllers
 
             return RedirectToAction("Index");
         }
+
         //Method for WorkoutByDate
+
         public ActionResult WorkoutByDate()
         {
-            return View(ListOfWorkout);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkoutService(userId);
+            var model = service.GetWorkout();
+            List<DateTime> dateTime = new List<DateTime>();
+            foreach (var workout in model)
+            {
+                if (!dateTime.Contains(workout.DayOfWorkout))
+                {
+                    dateTime.Add(workout.DayOfWorkout);
+                }
+            }
+            return View(dateTime);
+        }
+
+        public ActionResult ByDateDetails(DateTime date)
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkoutService(userId);
+            var model = service.GetWorkout();
+            var workoutByDate = new List<WorkoutListItem>();
+
+            foreach( var item in model)
+            {
+                if(item.DayOfWorkout == date)
+                {
+                    workoutByDate.Add(item);
+                }
+            }
+
+            return View(workoutByDate);
         }
     }
 }
