@@ -58,7 +58,7 @@ namespace FitnessTracker.Services
                              TrainerId = entity.TrainerId,
                              TrainerName = entity.Trainer.TrainerName,
                              DayOfWorkout= entity.DayOfWorkout,
-                             Duration = entity.Duration,
+                             Duration = entity.Exercise.Duration,
                              Day = entity.Day
                          }
                      );

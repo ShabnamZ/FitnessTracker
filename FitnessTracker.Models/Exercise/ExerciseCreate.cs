@@ -14,7 +14,7 @@ namespace FitnessTracker.Models
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         [MaxLength(80, ErrorMessage = "There are too many characters in this field.")]
         public string NameOfExercise { get; set; }
-        public float Duration{ get; set; }
+        public int Duration{ get; set; }
         [Required]
         public ExerciseType TypeOfExercise{ get; set; }
         [Required]

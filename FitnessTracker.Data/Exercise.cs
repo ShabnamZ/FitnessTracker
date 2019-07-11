@@ -30,7 +30,7 @@ namespace FitnessTracker.Data
         [Display(Name ="Exercise")]
         public string NameOfExercise { get; set; }
         [Required]
-        public float Duration { get; set; }
+        public int Duration { get; set; }
         [Required]
         [Display(Name ="Type")]
         public ExerciseType TypeOfExercise { get; set;}

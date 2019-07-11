@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Workout</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>WorkoutCreate</h4>
+    <h4>Create</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -46,7 +46,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.DayOfWorkout, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.DayOfWorkout, "Day of Workout", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.DayOfWorkout, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.DayOfWorkout, "", new { @class = "text-danger" })
@@ -55,11 +55,10 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Duration, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownList("ExerciseDuration", null, "", new { @class = "form-control" } )
             @Html.ValidationMessageFor(model => model.Duration, "", new { @class = "text-danger" })
         </div>
     </div>
-
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />
@@ -75,3 +74,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<style>
+    select {
+        width: 500px;
+        padding: 8px 0;
+    }
+</style>

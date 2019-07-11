@@ -15,7 +15,7 @@ namespace FitnessTracker.Models
      
         public string NameOfExercise { get; set; }
        
-        public float Duration { get; set; }
+        public int Duration { get; set; }
     
         [Display(Name = "Type")]
         public ExerciseType TypeOfExercise { get; set; }

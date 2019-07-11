@@ -4,14 +4,35 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<form action="https://formspree.io/shabnam.ziyovuddinova@gmail.com" method="POST">
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control" type="text" name="name" placeholder="Your Name*" required> 
+            <input class="form-control" type="text" name="phone" placeholder="Phone">
+        </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <div class="col-md-4">
+            <input class="form-control" type="text" name="subject" placeholder="Subject*" required>
+            <input class="form-control" type="email" name="email" placeholder="Email*" required>
+        </div>
+
+        <div class="row">
+            <textarea class="form-control" name="message" placeholder="Message*" required cols="30"></textarea>
+        </div>
+        <div class="row">
+            <button id="submit-btn" class="btn btn-lg">Submit</button>
+        </div>
+    </div>
+</form>
+
+@*<address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>*@

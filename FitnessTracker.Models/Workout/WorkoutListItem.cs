@@ -42,6 +42,8 @@ namespace FitnessTracker.Models
         public DateTime DayOfWorkout { get; set; }
         public int Duration { get; set; }
 
+        public int TotalDuration { get; set; }
+
         public virtual Exercise Exercise { get; set; }
     }
 }

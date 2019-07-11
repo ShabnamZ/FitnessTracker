@@ -38,6 +38,7 @@ namespace FitnessTracker.Data
         [Required]
         [Display(Name = "Exercise Id")]
         public int ExerciseId { get; set; }
+
         [ForeignKey("Trainer")]
         [Required]
         [Display(Name = "Trainer ID")]

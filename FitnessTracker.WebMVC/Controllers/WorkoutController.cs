@@ -32,6 +32,7 @@ namespace FitnessTracker.WebMVC.Controllers
             _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
             _exerciseService = new ExerciseService(Guid.Parse(User.Identity.GetUserId()));
             ViewBag.ExerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "NameOfExercise");
+            ViewBag.ExerciseDuration = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "Duration");
             ViewBag.TrainerId = new SelectList(_trainerService.GetTrainer().ToList(), "TrainerId", "TrainerName");
             return View();
         }
