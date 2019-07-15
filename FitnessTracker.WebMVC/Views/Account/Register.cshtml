@@ -3,35 +3,40 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
-
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <div class="form-wrapper">
+        <h4>Create a new account.</h4>
+        @*<hr />*@
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        @*<div class="form-group">*@
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-6 control-label" })
+        @*<div class="col-md-10">*@
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @*</div>
+            </div>
+            <div class="form-group">*@
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-6 control-label" })
+        @*<div class="col-md-10">*@
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        @*</div>
+            </div>
+            <div class="form-group">*@
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-10 control-label" })
+        @*<div class="col-md-10">*@
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        @*</div>
+            </div>*@
+        <br />
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
         </div>
     </div>
 }
@@ -39,3 +44,36 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<style>
+    form {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .form-wrapper {
+        background-color: rgba(255, 255, 255, .7);
+        border: 1px solid black;
+        padding: 25px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px 1px white;
+        margin-bottom: 50px;
+    }
+
+    .control-label {
+        padding-bottom: 5px;
+        text-align: center !important;
+    }
+
+    .form-control {
+        padding-bottom: 5px;
+    }
+    .col-md-6{
+        float:none !important;
+    }
+    .col-md-10{
+        float:none !important;
+    }
+
+</style>

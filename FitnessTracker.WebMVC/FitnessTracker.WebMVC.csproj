@@ -267,9 +267,13 @@
     <Content Include="Views\Workout\WorkoutByDate.cshtml" />
     <Content Include="Views\Workout\ByDateDetails.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
+    <Content Include="Views\Trainer\_Create.cshtml" />
+    <Content Include="Views\Exercise\_Create.cshtml" />
+    <Content Include="Views\Workout\_Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
