@@ -23,5 +23,25 @@ select,
 textarea {
     max-width: 280px;
 }
+.navbar {
+    background: #337ab7;
+}
+.nav-image{
+    height: 60px;
+    padding: 15px;
+}
+.navbar .navbar-header .navbar-brand {
+    color: black;
+}
 
+.navbar-inverse .navbar-nav  li a {
+color: black;
+}
+.navbar-right{
+    padding-right:10px;
+}
+.navbar-brand {
+    padding: 15px 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
