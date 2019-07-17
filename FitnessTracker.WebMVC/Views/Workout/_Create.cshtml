@@ -1,4 +1,4 @@
-﻿@model FitnessTracker.Models.Workout.WorkOutCreateTestModelViewOnly
+﻿@model FitnessTracker.Models.WorkoutCreate
 
 @using (Html.BeginForm("Create", "Workout", FormMethod.Post))
 {
@@ -16,17 +16,17 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.ExerciseId, "Exercise", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.ExerciseId, new SelectList( ViewData.Model.Exercise ), string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ExerciseId, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
         @*<div class="form-group">
             @Html.LabelFor(model => model.TrainerId, "Trainer", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TrainerId", null, string.Empty, new { @class = "form-control" })
+                @Html.DropDownList("TrainerId",null, string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TrainerId, "", new { @class = "text-danger" })
             </div>
         </div>*@

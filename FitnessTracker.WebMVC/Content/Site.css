@@ -2,6 +2,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,25 +24,71 @@ select,
 textarea {
     max-width: 280px;
 }
+/*----------------------------------Navigation--------------------------------------*/
 .navbar {
     background: #337ab7;
 }
-.nav-image{
+
+.nav-image {
     height: 60px;
     padding: 15px;
 }
+
 .navbar .navbar-header .navbar-brand {
     color: black;
 }
 
-.navbar-inverse .navbar-nav  li a {
-color: black;
-}
-.navbar-right{
-    padding-right:10px;
-}
-.navbar-brand {
-    padding: 15px 10px;
-    font-family: Helvetica, Arial, sans-serif;
+.navbar-inverse .navbar-nav li a {
+    color: black;
+    font-size: 18px;
 }
 
+.navbar-right {
+    padding-right: 10px;
+}
+
+.navbar-brand {
+    padding: 15px 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 23px;
+    font-weight:500; 
+}
+.navbar-brand:hover{
+    color:white;
+}
+
+/*----------------------------------Footer--------------------------------------*/
+
+footer {
+    text-align: center;
+    padding: 20px;
+    padding-top: 30px;
+    color: black;
+    background-color: white;
+    position: relative;
+    height: 150px;
+    margin-top: -150px;
+    clear: both;
+    font-family: 'Quicksand', sans-serif;
+}
+
+    footer a {
+        color: black;
+        padding: 10px;
+    }
+
+  footer a:hover {
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+
+#footer-logo2 {
+    height: 10px;
+    width: 10px;
+    transition: .3s ease-in-out;
+}
+
+#footer-logo2:hover {
+    transform: rotate(360deg);
+}

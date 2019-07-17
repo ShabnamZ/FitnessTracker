@@ -97,7 +97,6 @@
     <Compile Include="Trainer\TrainerEdit.cs" />
     <Compile Include="Trainer\TrainerListItem.cs" />
     <Compile Include="Workout\WorkoutCreate.cs" />
-    <Compile Include="Workout\WorkOutCreateTestModelViewOnly.cs" />
     <Compile Include="Workout\WorkoutDetail.cs" />
     <Compile Include="Workout\WorkoutEdit.cs" />
     <Compile Include="Workout\WorkoutListItem.cs" />

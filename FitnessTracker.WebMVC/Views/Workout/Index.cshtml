@@ -28,7 +28,7 @@
             <div class="modal-header">
                 <button class="close" data-dismiss="modal">&times;</button>
             </div>
-            @Html.Partial("_Create", new FitnessTracker.Models.Workout.WorkOutCreateTestModelViewOnly() {Exercise = ViewBag.ExerciseId }, new ViewDataDictionary{ {"Stage1", ViewBag.ExerciseId }, {"Stage2", ViewBag.TrainerId },{"Stage3", ViewBag.ExerciseDuration } })
+            @Html.Partial("_Create", new FitnessTracker.Models.WorkoutCreate())
             <div class="modal-body">
             </div>
         </div>

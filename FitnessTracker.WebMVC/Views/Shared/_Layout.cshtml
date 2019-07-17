@@ -30,7 +30,7 @@
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Exercises", "Index", "Exercise")</li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workout<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workouts<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Workouts", "Index", "Workout")</li>
                                 <li>@Html.ActionLink("Workout By Day", "WorkoutByDate", "Workout")</li>
@@ -47,14 +47,29 @@
     </div>
     <div class="newContainer">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Fitness Tracker</p>
-        </footer>
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year - Fitness Tracker</p>
+            </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <hr class="col-lg-12" />
+    <footer>
+        <a href="/Home/Terms">Terms &amp; Privacy</a> |
+        <a href="/Home/About">About</a> |
+        <a href="/Home/Contact">Contact</a>
+        <br />
+        <br />
+        <p>
+            Fitness Tracker &nbsp;-&nbsp; Keep your progress tracked &nbsp;|&nbsp; &copy; @DateTime.Now.Year &nbsp;- Shabnam Ziyovuddinova</>
+        </p>
+
+        <a href="https://shabnamz.github.io/" target="_blank"><img id="footer-logo2" src="~/Content/Assets/logo2-transparent.png" /></a>
+    </footer>
+
+
 </body>
 </html>

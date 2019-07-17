@@ -3,56 +3,57 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Workout</h2>
-
 <div>
-    <h4>Details</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NameOfWorkout)
-        </dt>
+    <h2>Workout</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.NameOfWorkout)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.WorkoutId)
-        </dt>
+    <div>
+        <h4>Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NameOfWorkout)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WorkoutId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Day)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NameOfWorkout)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.WorkoutId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Day)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DayOfWorkout)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.WorkoutId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Day)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DayOfWorkout)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ExerciseId)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Day)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DayOfWorkout)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ExerciseId)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Duration)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DayOfWorkout)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ExerciseId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Duration)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.ExerciseId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Duration)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Duration)
+            </dd>
+        </dl>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.WorkoutId }) |

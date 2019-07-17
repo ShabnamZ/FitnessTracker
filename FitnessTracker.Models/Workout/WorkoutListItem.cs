@@ -39,6 +39,7 @@ namespace FitnessTracker.Models
         [Required]
         public DaysOfWeek Day { get; set; }
         [Display(Name ="Workout By Day")]
+        [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString ="{0:MM/dd/yyyy}")]
         public DateTime DayOfWorkout { get; set; }
         public int Duration { get; set; }
 

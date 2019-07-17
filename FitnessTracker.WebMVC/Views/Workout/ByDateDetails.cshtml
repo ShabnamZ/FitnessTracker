@@ -3,80 +3,88 @@
 @{
     ViewBag.Title = "ByDateDetails";
 }
+<div class="container">
 
-<h2>Date Details</h2>
+    <h2>Date Details</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfWorkout)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsStarred)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ExerciseId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrainerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrainerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DayOfWorkout)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Duration)
-        </th>
-        <th></th>
-    </tr>
-    @{
-        var number = 0;
-        foreach (var item in Model)
-        {
-            number += item.Duration;
-        }
-
-    }
-    <tr>
-        <td>
-            Duration = @number
-        </td>
-    </tr>
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfWorkout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsStarred)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DayOfWorkout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th></th>
+        </tr>
+        @{
+            var number = 0;
+            foreach (var item in Model)
+            {
+                number += item.Duration;
+            }
+
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfWorkout)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsStarred)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExerciseId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrainerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrainerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayOfWorkout)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration) min
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkoutId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.WorkoutId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkoutId })
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
-                @Html.DisplayFor(modelItem => item.NameOfWorkout)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsStarred)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExerciseId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrainerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrainerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DayOfWorkout)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.WorkoutId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.WorkoutId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.WorkoutId })
+                Total = @number min
             </td>
         </tr>
-    }
 
-</table>
+    </table>
+</div>

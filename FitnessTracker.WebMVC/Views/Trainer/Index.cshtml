@@ -1,66 +1,66 @@
 ﻿@model IEnumerable<FitnessTracker.Models.TrainerListItem>
 
-@{
+    @{
     ViewBag.Title = "Index";
-}
-<div class="container">
-<h2>Trainer</h2>
+    }
+    <div class="container">
+        <h2>Trainer</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        @if (TempData.ContainsKey("SaveResult"))
+        {
+        <div class="alert alert-success fade in" role="alert">
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+        }
 
-<a data-target="#myModal" data-toggle="modal">Create Trainer</a>
+        <a data-target="#myModal" data-toggle="modal">Create Trainer</a>
 
-<div class="modal" id="myModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="close" data-dismiss="modal">&times;</button>
-            </div>
-            @Html.Partial("_Create", new FitnessTracker.Models.TrainerCreate())
-            <div class="modal-body">
+        <div class="modal" id="myModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    @Html.Partial("_Create", new FitnessTracker.Models.TrainerCreate())
+                    <div class="modal-body">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TrainerName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TrainerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrainerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TrainerId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TrainerId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TrainerId })
-            </td>
-        </tr>
-    }
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrainerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TrainerId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TrainerId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TrainerId })
+                </td>
+            </tr>
+            }
 
-</table>
+        </table>
     </div>

@@ -3,8 +3,9 @@
 @{
     ViewBag.Title = "WorkoutByDate";
 }
+<div class="container">
 
-<h2>WorkoutByDate</h2>
+<h2>Workout By Date</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -32,14 +33,14 @@
         <th>
             @Html.DisplayNameFor(model => model.DayOfWorkout)
         </th>*@
-        <th></th>
-        <th></th>
+        
+        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(model => item)
+            @Html.DisplayFor(model => item.Month)/@Html.DisplayFor(model => item.Day)/@Html.DisplayFor(model => item.Year)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.NameOfWorkout)
@@ -71,3 +72,4 @@
 }
 
 </table>
+    </div>

@@ -1,34 +1,37 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-<div class="container">
-<form method="POST" action="https://formspree.io/shabnam.ziyovuddinova@gmail.com">
-    <input type="email" name="email" placeholder="Your email">
-    <textarea name="message" placeholder="Test Message"></textarea>
-    <button type="submit">Submit</button>
-</form>
-    </div>
-@*<form action="https://formspree.io/shabnam.ziyovuddinova@gmail.com" method="POST">
-    <div class="row">
-        <div class="col-md-4">
-            <input class="form-control" type="text" name="name" placeholder="Your Name*" required> 
-        </div>
+<div class="form-wrapper">
+    <h2 style="text-align:center">@ViewBag.Title</h2>
+    <p style="text-align:center"><b>Got a question? We would love to hear from you. Send us a message and we'll respond as soon as possible.</b></p>
+    <!-- Email Form-->
+    <section>
+        <form id="contactForm" action="https://formspree.io/shabnam.ziyovuddinova@gmail.com" method="POST">
 
-        <div class="col-md-4">
-            <input class="form-control" type="text" name="subject" placeholder="Subject*" required>
-            <input class="form-control" type="email" name="email" placeholder="Email*" required>
-        </div>
+            <div class="form-group">
+                <label>
+                    <span class="contact">Name*</span>
+                    <input class="form-control" type="text" name="Name">
+                </label>
+            </div>
 
-        <div class="row">
-            <textarea class="form-control" name="message" placeholder="Message*" required cols="30"></textarea>
-        </div>
-        <div class="row">
-            <button id="submit-btn" class="btn btn-lg">Submit</button>
-        </div>
-    </div>
-</form>*@
+            <div class="form-group">
+                <label>
+                    <span class="control-label">Email address*</span>
+                    <input class="form-control" type="email" name="_replyto">
+                </label>
+            </div>
+
+            <label>
+                <span class="control-label"> Message</span>
+                <textarea name="message" class="form-control"></textarea>
+            </label>
+
+            <span><input class="btn btn-default" type="submit" value="Send Message"></span>
+        </form>
+
+    </section>
+</div>
 
 @*<address>
         One Microsoft Way<br />
@@ -41,3 +44,66 @@
         <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>*@
+
+<style>
+    /* Email Form */
+
+    #contactForm {
+        max-width: 450px;
+        margin: 0 auto 50px;
+    }
+
+    .form-wrapper {
+        background-color: aqua;
+        border: 1px solid black;
+        padding: 25px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px 1px white;
+        margin: 50px 30vw 50px 30vw;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+
+    #contactForm {
+        text-align: center;
+    }
+
+        #contactForm input {
+            border: 2px solid gray;
+            max-width: none;
+        }
+
+        #contactForm textarea {
+            width: 100%;
+            height: 100px;
+            border: 2px solid gray;
+            max-width: none;
+        }
+
+    input:focus {
+        border: 2px ridge yellow;
+        outline: none;
+    }
+
+    textarea:focus {
+        border: 2px ridge yellow;
+        padding: 2px;
+        outline: none;
+    }
+
+    .send {
+        width: 70%;
+        background-color: white;
+    }
+
+        .send:hover {
+            border: 2px ridge yellow;
+            color: black;
+            cursor: pointer;
+        }
+</style>
