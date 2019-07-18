@@ -13,17 +13,21 @@ namespace FitnessTracker.Models
         [Key]
         public int WorkoutId { get; set; }
         [Required]
-        [Display(Name = "Name of workout")]
+        [Display(Name = "Workout")]
         public string NameOfWorkout { get; set; }
         [Required]
         [Display(Name = "Exercise ID")]
         public int ExerciseId { get; set; }
+        [Display(Name ="Exercise")]
         public string ExerciseName { get; set; }
         [Required]
         public DaysOfWeek Day { get; set; }
+        [Display(Name = "Workout By Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DayOfWorkout { get; set; }
         public int Duration { get; set; }
         public int TrainerId { get; set; }
+        [Display(Name ="Trainer")]
         public string TrainerName { get; set; }
     }
 }

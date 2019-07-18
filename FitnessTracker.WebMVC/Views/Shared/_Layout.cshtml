@@ -33,7 +33,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workouts<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Workouts", "Index", "Workout")</li>
-                                <li>@Html.ActionLink("Workout By Day", "WorkoutByDate", "Workout")</li>
+                                <li>@Html.ActionLink("Workout By Date", "WorkoutByDate", "Workout")</li>
                             </ul>
                         </li>
                         <li>@Html.ActionLink("Trainers", "Index", "Trainer")</li>
@@ -56,8 +56,8 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <hr class="col-lg-12" />
     <footer>
+    <hr class="col-lg-12" style="padding-right:0;padding-left:0"/>
         @*<a href="/Home/Terms">Terms &amp; Privacy</a> |
         <a href="/Home/About">About</a> |
         <a href="/Home/Contact">Contact</a>*@

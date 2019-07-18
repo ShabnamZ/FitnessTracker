@@ -19,16 +19,32 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => model.TypeOfExercise)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfExercise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DifficultyLevel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DifficultyLevel)
+            </dd>
+            <dt>
                 @Html.DisplayNameFor(model => model.Duration)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Duration)
+                @Html.DisplayFor(model => model.Duration) min
             </dd>
+
+
         </dl>
     </div>
-</div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ExerciseId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+</div>

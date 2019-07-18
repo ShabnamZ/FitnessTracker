@@ -69,10 +69,14 @@ namespace FitnessTracker.WebMVC.Controllers
         {
             _trainerService = new TrainerService(Guid.Parse(User.Identity.GetUserId()));
             _exerciseService = new ExerciseService(Guid.Parse(User.Identity.GetUserId()));
-            ViewBag.ExcerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "NameOfExercise");
+            ViewBag.ExerciseId = new SelectList(_exerciseService.GetExercise().ToList(), "ExerciseId", "NameOfExercise");
             ViewBag.TrainerId = new SelectList(_trainerService.GetTrainer().ToList(), "TrainerId", "TrainerName");
             var service = CreateWorkoutService();
+            var eService = CreateExerciseService();
+            var tService = CreateTrainerService();
             var detail = service.GetWorkoutById(id);
+            var exercises = eService.GetExercise();
+            var trainers = tService.GetTrainer();
             var model =
                 new WorkoutEdit
                 {
@@ -82,7 +86,9 @@ namespace FitnessTracker.WebMVC.Controllers
                     ExerciseId = detail.ExerciseId,
                     Day = detail.Day,
                     Duration = detail.Duration,
-                    DayOfWorkout = detail.DayOfWorkout
+                    DayOfWorkout = detail.DayOfWorkout,
+                    Exercise = exercises,
+                    Trainer = trainers
                 };
             return View(model);
         }
@@ -121,6 +127,18 @@ namespace FitnessTracker.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new WorkoutService(userId);
+            return service;
+        }
+        private ExerciseService CreateExerciseService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ExerciseService(userId);
+            return service;
+        }
+        private TrainerService CreateTrainerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrainerService(userId);
             return service;
         }
 

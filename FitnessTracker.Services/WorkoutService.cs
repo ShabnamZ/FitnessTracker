@@ -103,8 +103,8 @@ namespace FitnessTracker.Services
                 entity.WorkoutId = model.WorkoutId;
                 entity.NameOfWorkout = model.NameOfWorkout;
                 entity.IsStarred = model.IsStarred;
-                //entity.ExerciseId = model.ExerciseId;
-                //entity.TrainerId = model.TrainerId;
+                entity.ExerciseId = model.ExerciseId;
+                entity.TrainerId = model.TrainerId;
                 entity.DayOfWorkout = model.DayOfWorkout;
                 entity.Duration = model.Duration;
                 entity.Day = model.Day;

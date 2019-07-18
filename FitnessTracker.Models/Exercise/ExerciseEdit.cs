@@ -12,13 +12,14 @@ namespace FitnessTracker.Models
     {
        
         public int ExerciseId { get; set; }
-     
+        [Display(Name = "Exercise")]
         public string NameOfExercise { get; set; }
        
         public int Duration { get; set; }
     
         [Display(Name = "Type")]
         public ExerciseType TypeOfExercise { get; set; }
+        [Display(Name = "Level")]
         public Difficulty DifficultyLevel { get; set; }
     }
 }

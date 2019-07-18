@@ -31,9 +31,11 @@ namespace FitnessTracker.WebMVC.Controllers.WebAPI
                     NameOfWorkout = detail.NameOfWorkout,
                     IsStarred = newState,
                     TrainerId = detail.TrainerId,
+                    ExerciseId= detail.ExerciseId,
                     Day = detail.Day,
                     Duration = detail.Duration,
                     DayOfWorkout =detail.DayOfWorkout
+
                 };
 
             // Return a value indicating whether the update succeeded

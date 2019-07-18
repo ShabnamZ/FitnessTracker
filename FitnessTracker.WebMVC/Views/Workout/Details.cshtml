@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="container">
 <div>
     <h2>Workout</h2>
 
@@ -11,46 +12,38 @@
         <hr />
         <dl class="dl-horizontal">
             <dt>
+                @Html.DisplayNameFor(model => model.ExerciseName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ExerciseName)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.NameOfWorkout)
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.NameOfWorkout)
             </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.WorkoutId)
-            </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.WorkoutId)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Day)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Day)
-            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.DayOfWorkout)
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.DayOfWorkout)
             </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ExerciseId)
-            </dt>
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Day)
+            </dt>
             <dd>
-                @Html.DisplayFor(model => model.ExerciseId)
+                @Html.DisplayFor(model => model.Day)
             </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Duration)
-            </dt>
 
+            <dt>
+                @Html.DisplayNameFor(model => model.TrainerName)
+            </dt>
             <dd>
-                @Html.DisplayFor(model => model.Duration)
+                @Html.DisplayFor(model => model.TrainerName)
             </dd>
         </dl>
     </div>
@@ -59,3 +52,5 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.WorkoutId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+</div>

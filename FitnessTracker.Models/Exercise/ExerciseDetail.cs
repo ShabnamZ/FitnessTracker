@@ -14,7 +14,7 @@ namespace FitnessTracker.Models
         [Display(Name = "ID")]
         public int ExerciseId { get; set; }
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Exercise")]
         public string NameOfExercise { get; set; }
         [Required]
         public int Duration { get; set; }
@@ -22,6 +22,7 @@ namespace FitnessTracker.Models
         [Display(Name = "Type")]
         public ExerciseType TypeOfExercise { get; set; }
         [Required]
+        [Display(Name = "Level")]
         public Difficulty DifficultyLevel { get; set; }
         [Required]
         public Guid OwnerId { get; set; }

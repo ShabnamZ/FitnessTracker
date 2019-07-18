@@ -18,12 +18,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.IsStarred)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.ExerciseId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TrainerId)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.TrainerName)
             </th>
@@ -52,12 +52,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.IsStarred)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.ExerciseId)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.TrainerId)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.TrainerName)
                 </td>
@@ -79,11 +79,10 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
             <td>
                 Total = @number min
             </td>
+            <td></td>
         </tr>
 
     </table>
