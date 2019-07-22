@@ -1,4 +1,4 @@
-﻿@model FitnessTracker.Models.WorkoutCreate
+﻿@*@model FitnessTracker.Models.WorkoutCreate
 
 @using (Html.BeginForm("Create", "Workout", FormMethod.Post))
 {
@@ -31,7 +31,7 @@
             </div>
         </div>*@
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Day, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EnumDropDownListFor(model => model.Day, new { htmlAttributes = new { @class = "form-control" } })
@@ -44,7 +44,7 @@
                 @Html.EditorFor(model => model.DayOfWorkout, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DayOfWorkout, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
         @*<div class="form-group">
             @Html.LabelFor(model => model.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -70,4 +70,4 @@
         width: 500px;
         padding: 8px 0;
     }
-</style>
+</style>*@

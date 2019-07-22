@@ -22,7 +22,7 @@ namespace FitnessTracker.Models
         public string ExerciseName { get; set; }
         [Required]
         public DaysOfWeek Day { get; set; }
-        [Display(Name = "Workout By Date")]
+        [Display(Name = "Date")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DayOfWorkout { get; set; }
         public int Duration { get; set; }
