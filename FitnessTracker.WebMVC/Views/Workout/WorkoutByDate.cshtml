@@ -7,10 +7,9 @@
 
     <h2> Workout By Dates</h2>
 
-    <p>
-        <button id="workoutdates-create" class="btn btn default">
-            @Html.ActionLink("Create New", "Create")
-        </button>
+    <p id="action-link">
+        
+            @Html.ActionLink("Create New", "Create","WorkoutByDate",new { @class = "btn btn-default" })
     </p>
     <table class="table">
         <tr class="table-display">
@@ -85,12 +84,7 @@
         background-size: cover;
     }
 
-    #workoutdates-create a {
-        text-decoration: none;
-        color: black;
-    }
-
-        #workoutdates-create a:hover {
-            text-decoration: underline;
-        }
+       #action-link a{
+          background-color: lightgrey;
+      }
 </style>

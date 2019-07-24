@@ -48,9 +48,9 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
+            <div id="action-link" @*class="form-actions no-color"*@>
                 <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
+                @Html.ActionLink("Back to List", "Index","Exercise",new { @class = "btn btn-default" })
             </div>
         }
     </div>
@@ -62,4 +62,9 @@
         background-attachment: fixed;
         background-size: cover;
     }
+
+      #action-link a{
+          background-color: lightgrey;
+      }
+
 </style>

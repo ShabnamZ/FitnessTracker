@@ -6,10 +6,8 @@
     <div class="container">
         <h2>Trainer</h2>
 
-        <p>
-            <button id="trainer-create" class="btn btn default">
-                @Html.ActionLink("Create New", "Create")
-            </button>
+        <p id="action-link">
+                @Html.ActionLink("Create New", "Create","Trainer", new { @class="btn btn-default" })
         </p>
         @if (TempData.ContainsKey("SaveResult"))
         {
@@ -74,13 +72,15 @@
         background-size: cover;
     }
 
-    
-    #trainer-create a {
+      #action-link a{
+          background-color: lightgrey;
+      }
+    /*#trainer-create a {
         text-decoration: none;
         color: black;
     }
 
         #trainer-create a:hover {
             text-decoration:underline;
-        }
+        }*/
 </style>

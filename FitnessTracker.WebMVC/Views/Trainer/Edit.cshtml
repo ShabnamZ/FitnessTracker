@@ -41,8 +41,8 @@
         </div>
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
+    <div id="action-link" >
+        @Html.ActionLink("Back to List", "Index","Exercise", new { @class = "btn btn-default" })
     </div>
 </div>
 @section Scripts {
@@ -55,4 +55,8 @@
         background-attachment: fixed;
         background-size: cover;
     }
+
+      #action-link a{
+          background-color: lightgrey;
+      }
 </style>

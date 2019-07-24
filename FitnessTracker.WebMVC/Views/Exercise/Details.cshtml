@@ -44,8 +44,8 @@
         </dl>
     </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ExerciseId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", "Exercise",new { id = Model.ExerciseId }, new { @class = "btn btn-default" } ) |
+   <span id="action-link"> @Html.ActionLink("Back to List", "Index", "Exercise", new { @class = "btn btn-default" })</span>
 </p>
 </div>
 <style>
@@ -55,4 +55,8 @@
         background-attachment: fixed;
         background-size: cover;
     }
+
+      #action-link a{
+          background-color: lightgrey;
+      }
 </style>

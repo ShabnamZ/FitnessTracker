@@ -6,10 +6,8 @@
 <div class="container">
 
     <h2>Workout</h2>
-    <p>
-        <button id="workout-create" class="btn btn default">
-            @Html.ActionLink("Create New", "Create")
-        </button>
+    <p id="action-link">
+            @Html.ActionLink("Create New", "Create","Workout", new { @class = "btn btn-default" })
     </p>
     @if (TempData.ContainsKey("SaveResult"))
     {
@@ -135,12 +133,16 @@
         background-size: cover;
     }
 
-    #workout-create a {
+       #action-link a{
+          background-color: lightgrey;
+      }
+
+    /*#workout-create a {
         text-decoration: none;
         color: black;
     }
 
         #workout-create a:hover {
             text-decoration: underline;
-        }
+        }*/
 </style>

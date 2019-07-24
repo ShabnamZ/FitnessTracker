@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessTracker.Contracts", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessTracker.Services", "FitnessTracker.Services\FitnessTracker.Services.csproj", "{476DBC4C-96F3-45B7-8682-AFC9AB31A159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessTrackerWebAPI", "FitnessTrackerWebAPI\FitnessTrackerWebAPI.csproj", "{A701A97B-8C55-4BAC-8D56-8D9B6D682F3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{476DBC4C-96F3-45B7-8682-AFC9AB31A159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{476DBC4C-96F3-45B7-8682-AFC9AB31A159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{476DBC4C-96F3-45B7-8682-AFC9AB31A159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A701A97B-8C55-4BAC-8D56-8D9B6D682F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A701A97B-8C55-4BAC-8D56-8D9B6D682F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A701A97B-8C55-4BAC-8D56-8D9B6D682F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A701A97B-8C55-4BAC-8D56-8D9B6D682F3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
